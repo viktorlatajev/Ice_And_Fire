@@ -57,5 +57,14 @@ export default class GotService {
         return item.url.match(idRegExp)[1];
     }
 
-    
+    _transformCharacter = (char) => {
+        return {
+            id: this._extractId(char),
+            name: this.isSet(char.name),
+            gender: this.isSet(char.gender),
+            born: this.isSet(char.born),
+            died:  this.isSet(char.died),
+            culture:  this.isSet(char.culture)
+        }
+    }
 }
